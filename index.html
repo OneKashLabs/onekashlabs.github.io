@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneKash Labs - Apps That Mind Their Own Business</title>
+    <meta name="description" content="Open source tools for everyday life. No tracking. No accounts. No nonsense.">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo-32-favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo-16-favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/logo-180-apple-touch.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Base colors */
+            --bg-dark: #0a0a0f;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --bg-elevated: rgba(255, 255, 255, 0.06);
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-muted: rgba(255, 255, 255, 0.4);
+
+            /* Glassmorphism */
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-bg-hover: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-border-hover: rgba(255, 255, 255, 0.2);
+
+            /* Gradients */
+            --gradient-purple: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-pink: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-blue: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-orange: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+
+            /* Accent colors */
+            --accent: #7c5cff;
+            --accent-glow: rgba(124, 92, 255, 0.3);
+            --success: #4ade80;
+            --success-glow: rgba(74, 222, 128, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Background orbs */
+        .bg-orbs {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .orb-1 {
+            width: 600px;
+            height: 600px;
+            background: var(--gradient-purple);
+            top: -200px;
+            left: -200px;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 500px;
+            height: 500px;
+            background: var(--gradient-pink);
+            top: 50%;
+            right: -150px;
+            animation-delay: -5s;
+        }
+
+        .orb-3 {
+            width: 400px;
+            height: 400px;
+            background: var(--gradient-blue);
+            bottom: -100px;
+            left: 30%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -30px) scale(1.05); }
+            50% { transform: translate(-20px, 20px) scale(0.95); }
+            75% { transform: translate(20px, 30px) scale(1.02); }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem 2rem;
+            background: var(--glass-bg);
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px var(--accent-glow);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.7) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent);
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 100px;
+            transition: all 0.3s ease;
+        }
+
+        .hero-cta:hover {
+            background: var(--glass-bg-hover);
+            border-color: var(--accent);
+            box-shadow: 0 0 20px var(--accent-glow);
+            gap: 0.75rem;
+        }
+
+        /* Sections */
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 0.75rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            text-align: center;
+            margin-bottom: 3.5rem;
+            font-weight: 600;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .product-card {
+            background: var(--glass-bg);
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .product-card:hover {
+            border-color: var(--glass-border-hover);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .product-card:hover::before {
+            opacity: 1;
+        }
+
+        .product-card.coming-soon {
+            opacity: 0.5;
+        }
+
+        .product-card.coming-soon:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: var(--glass-border);
+        }
+
+        .product-icon {
+            font-size: 3rem;
+            margin-bottom: 1.25rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .product-icon img {
+            width: 72px;
+            height: 72px;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .product-name {
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.5;
+        }
+
+        .product-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 0.4rem 0.9rem;
+            border-radius: 100px;
+            margin-bottom: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .product-status.available {
+            background: var(--success-glow);
+            color: var(--success);
+            border: 1px solid rgba(74, 222, 128, 0.3);
+        }
+
+        .product-status.soon {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            border: 1px solid var(--glass-border);
+        }
+
+        .product-links {
+            display: flex;
+            gap: 1.25rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .product-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 0.4rem 0.75rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .product-links a:hover {
+            color: var(--text-primary);
+            background: var(--glass-bg);
+        }
+
+        /* Power Tools */
+        .powertool-card {
+            background: var(--glass-bg);
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            max-width: 520px;
+            margin: 0 auto;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .powertool-card:hover {
+            border-color: var(--glass-border-hover);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .powertool-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .powertool-icon {
+            font-size: 2rem;
+        }
+
+        .powertool-name {
+            font-size: 1.35rem;
+            font-weight: 600;
+        }
+
+        .powertool-badges {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .product-status.owasp {
+            background: var(--accent-glow);
+            color: var(--accent);
+            border: 1px solid rgba(124, 92, 255, 0.3);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .product-status.owasp:hover {
+            background: rgba(124, 92, 255, 0.3);
+        }
+
+        .powertool-install {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--glass-border);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .powertool-install code {
+            font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .powertool-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .powertool-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.4rem 0.75rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .powertool-links a:hover {
+            color: var(--text-primary);
+            background: var(--glass-bg);
+        }
+
+        /* Philosophy */
+        .philosophy {
+            padding: 6rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .philosophy-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .philosophy-item {
+            background: var(--glass-bg);
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .philosophy-item:hover {
+            border-color: var(--glass-border-hover);
+            transform: translateY(-2px);
+        }
+
+        .philosophy-icon {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 1rem;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .philosophy-item:nth-child(1) .philosophy-icon {
+            background: var(--gradient-purple);
+        }
+
+        .philosophy-item:nth-child(2) .philosophy-icon {
+            background: var(--gradient-pink);
+        }
+
+        .philosophy-item:nth-child(3) .philosophy-icon {
+            background: var(--gradient-blue);
+        }
+
+        .philosophy-item:nth-child(4) .philosophy-icon {
+            background: var(--gradient-orange);
+        }
+
+        .philosophy-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .philosophy-item p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .hero {
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            .section {
+                padding: 4rem 1.5rem;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .philosophy-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .orb {
+                filter: blur(60px);
+                opacity: 0.3;
+            }
+
+            .orb-1 {
+                width: 400px;
+                height: 400px;
+            }
+
+            .orb-2 {
+                width: 350px;
+                height: 350px;
+            }
+
+            .orb-3 {
+                width: 300px;
+                height: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .philosophy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-card, .powertool-card, .philosophy-item {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Fallback for browsers without backdrop-filter */
+        @supports not (backdrop-filter: blur(20px)) {
+            nav, .product-card, .powertool-card, .philosophy-item {
+                background: rgba(20, 20, 25, 0.95);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background orbs -->
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <nav>
+        <a href="#" class="logo">
+            <img src="images/logo.svg" alt="OneKash Labs" class="logo-icon">
+            OneKash Labs
+        </a>
+    </nav>
+
+    <section class="hero">
+        <h1>Open Source. Modern.</h1>
+        <p class="hero-subtitle">
+            Your tools. Your data. Your rules.
+        </p>
+        <a href="#products" class="hero-cta">
+            Explore what we build <span>&darr;</span>
+        </a>
+    </section>
+
+    <section class="section" id="products">
+        <p class="section-label">Apps</p>
+        <h2 class="section-title">For everyone</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-icon"><img src="images/kashcal-icon.png" alt="KashCal"></div>
+                <h3 class="product-name">KashCal</h3>
+                <p class="product-desc">A modern calendar that works offline and syncs with iCloud.</p>
+                <span class="product-status available">Available</span>
+                <div class="product-links">
+                    <a href="https://kashcal.github.io">Website</a>
+                    <a href="https://github.com/KashCal/KashCal/releases/latest">Download</a>
+                    <a href="https://f-droid.org/en/packages/org.onekash.kashcal/">F-Droid</a>
+                    <a href="https://github.com/KashCal/KashCal">Source</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-icon"><img src="images/kashcake-icon.svg" alt="KashCake"></div>
+                <h3 class="product-name">KashCake</h3>
+                <p class="product-desc">Never forget a birthday. Syncs with contacts, stays on your device.</p>
+                <span class="product-status available">Available</span>
+                <div class="product-links">
+                    <a href="https://github.com/KashCal/KashCake/releases/latest">Download</a>
+                    <a href="https://github.com/KashCal/KashCake">Source</a>
+                </div>
+            </div>
+            <div class="product-card coming-soon">
+                <div class="product-icon">⏱️</div>
+                <h3 class="product-name">KashTime</h3>
+                <p class="product-desc">Timers and stopwatches that respect your focus.</p>
+                <span class="product-status soon">Coming soon</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="powertools">
+        <p class="section-label">Power Tools</p>
+        <h2 class="section-title">For the technically inclined</h2>
+        <div class="powertool-card">
+            <div class="powertool-header">
+                <span class="powertool-icon">☁️</span>
+                <h3 class="powertool-name">iCloud Calendar MCP Server</h3>
+            </div>
+            <div class="powertool-badges">
+                <span class="product-status available">Available</span>
+                <a href="https://github.com/OWASP/www-project-mcp-top-10" class="product-status owasp">OWASP MCP Top 10</a>
+            </div>
+            <div class="powertool-install">
+                <code>$ npx @icloud-calendar-mcp/server</code>
+            </div>
+            <div class="powertool-links">
+                <a href="https://www.npmjs.com/package/@icloud-calendar-mcp/server">npm</a>
+                <a href="https://pypi.org/project/icloud-calendar-mcp/">PyPI</a>
+                <a href="https://github.com/icloud-calendar-mcp/icloud-calendar-mcp">Source</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="philosophy">
+        <div class="philosophy-content">
+            <p class="section-label">Philosophy</p>
+            <h2 class="section-title">How we think about software</h2>
+            <div class="philosophy-grid">
+                <div class="philosophy-item">
+                    <div class="philosophy-icon">🔒</div>
+                    <h3>Your data is yours</h3>
+                    <p>It lives on your device. We never see it, store it, or sell it.</p>
+                </div>
+                <div class="philosophy-item">
+                    <div class="philosophy-icon">📖</div>
+                    <h3>Open by default</h3>
+                    <p>All our code is public. See for yourself.</p>
+                </div>
+                <div class="philosophy-item">
+                    <div class="philosophy-icon">🎨</div>
+                    <h3>Design matters</h3>
+                    <p>Beautiful interfaces aren't just for Big Tech.</p>
+                </div>
+                <div class="philosophy-item">
+                    <div class="philosophy-icon">🎯</div>
+                    <h3>Does one thing well</h3>
+                    <p>Each app has one job. It does it well.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="footer-text">
+            OneKash Labs · No data collected. Ever.
+        </p>
+    </footer>
+</body>
+</html>

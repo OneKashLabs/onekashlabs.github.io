@@ -1,0 +1,19 @@
+# Claude Code context files
+CLAUDE.md
+*.backup.html
+*.backup.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Build/temp files
+*.log
+*.tmp

@@ -354,6 +354,14 @@
         }
 
         /* Power Tools */
+        .powertool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
         .powertool-card {
             background: var(--glass-bg);
             -webkit-backdrop-filter: blur(20px);
@@ -361,8 +369,6 @@
             border: 1px solid var(--glass-border);
             border-radius: 20px;
             padding: 2.5rem;
-            max-width: 520px;
-            margin: 0 auto;
             text-align: center;
             transition: all 0.3s ease;
         }
@@ -656,22 +662,38 @@
     <section class="section" id="powertools">
         <p class="section-label">Power Tools</p>
         <h2 class="section-title">For the technically inclined</h2>
-        <div class="powertool-card">
-            <div class="powertool-header">
-                <span class="powertool-icon">☁️</span>
-                <h3 class="powertool-name">iCloud Calendar MCP Server</h3>
+        <div class="powertool-grid">
+            <div class="powertool-card">
+                <div class="powertool-header">
+                    <span class="powertool-icon">☁️</span>
+                    <h3 class="powertool-name">iCloud Calendar MCP Server</h3>
+                </div>
+                <div class="powertool-badges">
+                    <span class="product-status available">Available</span>
+                    <a href="https://github.com/OWASP/www-project-mcp-top-10" class="product-status owasp">OWASP MCP Top 10</a>
+                </div>
+                <div class="powertool-install">
+                    <code>$ npx @icloud-calendar-mcp/server</code>
+                </div>
+                <div class="powertool-links">
+                    <a href="https://www.npmjs.com/package/@icloud-calendar-mcp/server">npm</a>
+                    <a href="https://pypi.org/project/icloud-calendar-mcp/">PyPI</a>
+                    <a href="https://github.com/icloud-calendar-mcp/icloud-calendar-mcp">Source</a>
+                </div>
             </div>
-            <div class="powertool-badges">
-                <span class="product-status available">Available</span>
-                <a href="https://github.com/OWASP/www-project-mcp-top-10" class="product-status owasp">OWASP MCP Top 10</a>
-            </div>
-            <div class="powertool-install">
-                <code>$ npx @icloud-calendar-mcp/server</code>
-            </div>
-            <div class="powertool-links">
-                <a href="https://www.npmjs.com/package/@icloud-calendar-mcp/server">npm</a>
-                <a href="https://pypi.org/project/icloud-calendar-mcp/">PyPI</a>
-                <a href="https://github.com/icloud-calendar-mcp/icloud-calendar-mcp">Source</a>
+            <div class="powertool-card">
+                <div class="powertool-header">
+                    <span class="powertool-icon">📅</span>
+                    <h3 class="powertool-name">iCalDAV</h3>
+                </div>
+                <div class="powertool-badges">
+                    <span class="product-status available">Available</span>
+                </div>
+                <p class="product-desc">A modern Kotlin library for CalDAV calendar sync and iCalendar parsing.</p>
+                <div class="powertool-links">
+                    <a href="https://icaldav.github.io">Website</a>
+                    <a href="https://github.com/iCalDAV/icaldav.github.io">Source</a>
+                </div>
             </div>
         </div>
     </section>

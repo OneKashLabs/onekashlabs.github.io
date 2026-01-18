@@ -5,6 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OneKash Labs - Apps That Mind Their Own Business</title>
     <meta name="description" content="Open source tools for everyday life. No tracking. No accounts. No nonsense.">
+    <meta name="author" content="OneKash Labs">
+    <meta name="theme-color" content="#0a0a0f">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://onekash.org/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://onekash.org/">
+    <meta property="og:title" content="OneKash Labs - Apps That Mind Their Own Business">
+    <meta property="og:description" content="Open source tools for everyday life. No tracking. No accounts. No nonsense.">
+    <meta property="og:image" content="https://onekash.org/images/logo.png">
+    <meta property="og:site_name" content="OneKash Labs">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="OneKash Labs - Apps That Mind Their Own Business">
+    <meta name="twitter:description" content="Open source tools for everyday life. No tracking. No accounts. No nonsense.">
+    <meta name="twitter:image" content="https://onekash.org/images/logo.png">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "OneKash Labs",
+        "url": "https://onekash.org",
+        "logo": "https://onekash.org/images/logo.png",
+        "description": "Open source tools for everyday life. No tracking. No accounts. No nonsense.",
+        "sameAs": [
+            "https://github.com/OneKashLabs"
+        ]
+    }
+    </script>
+
     <link rel="icon" type="image/png" sizes="32x32" href="images/logo-32-favicon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="images/logo-16-favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/logo-180-apple-touch.png">
@@ -125,8 +160,9 @@
             border-bottom: 1px solid var(--glass-border);
             z-index: 100;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
+            max-width: 100%;
         }
 
         .logo {
@@ -144,6 +180,23 @@
             height: 32px;
             border-radius: 8px;
             box-shadow: 0 4px 15px var(--accent-glow);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
         }
 
         /* Hero */
@@ -325,6 +378,20 @@
             border: 1px solid rgba(74, 222, 128, 0.3);
         }
 
+        .product-status.explore {
+            background: var(--accent-glow);
+            color: var(--accent);
+            border: 1px solid rgba(124, 92, 255, 0.3);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .product-status.explore:hover {
+            background: rgba(124, 92, 255, 0.3);
+            border-color: var(--accent);
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
         .product-status.soon {
             background: rgba(255, 255, 255, 0.05);
             color: var(--text-muted);
@@ -388,6 +455,12 @@
 
         .powertool-icon {
             font-size: 2rem;
+        }
+
+        .powertool-logo {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
         }
 
         .powertool-name {
@@ -536,12 +609,32 @@
         .footer-text {
             color: var(--text-muted);
             font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--accent);
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             nav {
                 padding: 1rem 1.5rem;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+            }
+
+            .nav-links a {
+                font-size: 0.85rem;
             }
 
             .hero {
@@ -597,9 +690,147 @@
                 background: rgba(20, 20, 25, 0.95);
             }
         }
+
+        /* Scroll progress bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--accent);
+            width: 0%;
+            z-index: 101;
+            transition: width 0.1s ease-out;
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 44px;
+            height: 44px;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 50%;
+            color: var(--text-secondary);
+            font-size: 1.25rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: var(--glass-bg-hover);
+            border-color: var(--accent);
+            color: var(--text-primary);
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        /* External link indicator */
+        .product-links a[href^="http"]::after,
+        .powertool-links a[href^="http"]::after {
+            content: " ↗";
+            font-size: 0.75em;
+            opacity: 0.7;
+        }
+
+        /* Active nav link */
+        .nav-links a.active {
+            color: var(--text-primary);
+        }
+
+        /* Copy button */
+        .copy-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 0.25rem 0.5rem;
+            margin-left: 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            transition: all 0.2s ease;
+        }
+
+        .copy-btn:hover {
+            color: var(--text-primary);
+            background: var(--glass-bg);
+        }
+
+        .copy-btn.copied {
+            color: var(--success);
+        }
+
+        /* Entrance animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Focus states for keyboard navigation */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+        }
+
+        .product-card:focus-within,
+        .powertool-card:focus-within,
+        .philosophy-item:focus-within {
+            border-color: var(--accent);
+        }
+
+        /* Respect reduced motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            .orb {
+                animation: none;
+            }
+
+            .product-card,
+            .powertool-card,
+            .philosophy-item,
+            .hero-cta,
+            .scroll-top,
+            .copy-btn,
+            .scroll-progress {
+                transition: none;
+            }
+
+            .fade-in {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+
+            html {
+                scroll-behavior: auto;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Scroll progress bar -->
+    <div class="scroll-progress"></div>
+
     <!-- Background orbs -->
     <div class="bg-orbs">
         <div class="orb orb-1"></div>
@@ -612,6 +843,10 @@
             <img src="images/logo.svg" alt="OneKash Labs" class="logo-icon">
             OneKash Labs
         </a>
+        <div class="nav-links">
+            <a href="#products">Apps</a>
+            <a href="#powertools">Tools</a>
+        </div>
     </nav>
 
     <section class="hero">
@@ -628,33 +863,25 @@
         <p class="section-label">Apps</p>
         <h2 class="section-title">For everyone</h2>
         <div class="product-grid">
-            <div class="product-card">
-                <div class="product-icon"><img src="images/kashcal-icon.png" alt="KashCal"></div>
+            <div class="product-card fade-in">
+                <div class="product-icon"><img src="images/kashcal-icon.png" alt="KashCal" loading="lazy"></div>
                 <h3 class="product-name">KashCal</h3>
                 <p class="product-desc">A modern calendar that works offline and syncs with iCloud.</p>
-                <span class="product-status available">Available</span>
+                <a href="https://github.com/KashCal/KashCal" class="product-status explore">Explore →</a>
                 <div class="product-links">
                     <a href="https://kashcal.github.io">Website</a>
                     <a href="https://github.com/KashCal/KashCal/releases/latest">Download</a>
                     <a href="https://f-droid.org/en/packages/org.onekash.kashcal/">F-Droid</a>
-                    <a href="https://github.com/KashCal/KashCal">Source</a>
                 </div>
             </div>
-            <div class="product-card">
-                <div class="product-icon"><img src="images/kashcake-icon.svg" alt="KashCake"></div>
+            <div class="product-card fade-in">
+                <div class="product-icon"><img src="images/kashcake-icon.svg" alt="KashCake" loading="lazy"></div>
                 <h3 class="product-name">KashCake</h3>
                 <p class="product-desc">Never forget a birthday. Syncs with contacts, stays on your device.</p>
-                <span class="product-status available">Available</span>
+                <a href="https://github.com/KashCal/KashCake" class="product-status explore">Explore →</a>
                 <div class="product-links">
                     <a href="https://github.com/KashCal/KashCake/releases/latest">Download</a>
-                    <a href="https://github.com/KashCal/KashCake">Source</a>
                 </div>
-            </div>
-            <div class="product-card coming-soon">
-                <div class="product-icon">⏱️</div>
-                <h3 class="product-name">KashTime</h3>
-                <p class="product-desc">Timers and stopwatches that respect your focus.</p>
-                <span class="product-status soon">Coming soon</span>
             </div>
         </div>
     </section>
@@ -663,36 +890,34 @@
         <p class="section-label">Power Tools</p>
         <h2 class="section-title">For the technically inclined</h2>
         <div class="powertool-grid">
-            <div class="powertool-card">
+            <div class="powertool-card fade-in">
                 <div class="powertool-header">
                     <span class="powertool-icon">☁️</span>
                     <h3 class="powertool-name">iCloud Calendar MCP Server</h3>
                 </div>
                 <div class="powertool-badges">
-                    <span class="product-status available">Available</span>
+                    <a href="https://github.com/icloud-calendar-mcp/icloud-calendar-mcp" class="product-status explore">Explore →</a>
                     <a href="https://github.com/OWASP/www-project-mcp-top-10" class="product-status owasp">OWASP MCP Top 10</a>
                 </div>
                 <div class="powertool-install">
-                    <code>$ npx @icloud-calendar-mcp/server</code>
+                    <code id="install-cmd">npx @icloud-calendar-mcp/server</code><button class="copy-btn" data-copy="npx @icloud-calendar-mcp/server" aria-label="Copy command">Copy</button>
                 </div>
                 <div class="powertool-links">
                     <a href="https://www.npmjs.com/package/@icloud-calendar-mcp/server">npm</a>
                     <a href="https://pypi.org/project/icloud-calendar-mcp/">PyPI</a>
-                    <a href="https://github.com/icloud-calendar-mcp/icloud-calendar-mcp">Source</a>
                 </div>
             </div>
-            <div class="powertool-card">
+            <div class="powertool-card fade-in">
                 <div class="powertool-header">
-                    <span class="powertool-icon">📅</span>
+                    <img src="images/icaldav-icon.svg" alt="iCalDAV" class="powertool-logo">
                     <h3 class="powertool-name">iCalDAV</h3>
                 </div>
                 <div class="powertool-badges">
-                    <span class="product-status available">Available</span>
+                    <a href="https://github.com/iCalDAV/iCalDAV" class="product-status explore">Explore →</a>
                 </div>
-                <p class="product-desc">A modern Kotlin library for CalDAV calendar sync and iCalendar parsing.</p>
+                <p class="product-desc">Kotlin CalDAV client with offline sync and conflict resolution.</p>
                 <div class="powertool-links">
                     <a href="https://icaldav.github.io">Website</a>
-                    <a href="https://github.com/iCalDAV/icaldav.github.io">Source</a>
                 </div>
             </div>
         </div>
@@ -729,8 +954,94 @@
 
     <footer>
         <p class="footer-text">
-            OneKash Labs · No data collected. Ever.
+            © <span id="year"></span> OneKash Labs · No data collected. Ever.
         </p>
+        <a href="https://github.com/orgs/OneKashLabs/discussions" class="footer-link">Questions? Talk to us →</a>
     </footer>
+
+    <!-- Scroll to top button -->
+    <button class="scroll-top" aria-label="Scroll to top">↑</button>
+
+    <script>
+        // Current year in copyright
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Scroll progress bar
+        const scrollProgress = document.querySelector('.scroll-progress');
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+        });
+
+        // Scroll to top button
+        const scrollTopBtn = document.querySelector('.scroll-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Active nav highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        const observerOptions = {
+            rootMargin: '-50% 0px -50% 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === '#' + entry.target.id) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => observer.observe(section));
+
+        // Copy button
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', async () => {
+                const text = btn.dataset.copy;
+                try {
+                    await navigator.clipboard.writeText(text);
+                    btn.textContent = 'Copied!';
+                    btn.classList.add('copied');
+                    setTimeout(() => {
+                        btn.textContent = 'Copy';
+                        btn.classList.remove('copied');
+                    }, 2000);
+                } catch (err) {
+                    btn.textContent = 'Failed';
+                    setTimeout(() => btn.textContent = 'Copy', 2000);
+                }
+            });
+        });
+
+        // Entrance animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const fadeObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    fadeObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(el => fadeObserver.observe(el));
+    </script>
 </body>
 </html>

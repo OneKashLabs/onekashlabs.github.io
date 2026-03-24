@@ -964,7 +964,7 @@
         <p class="footer-text">
             © <span id="year"></span> OneKash Labs · No data collected. Ever.
         </p>
-        <a href="https://github.com/orgs/OneKashLabs/discussions" class="footer-link">Questions? Talk to us →</a>
+        <a id="contact-link" class="footer-link">Questions? Talk to us →</a>
     </footer>
 
     <!-- Scroll to top button -->
@@ -973,6 +973,10 @@
     <script>
         // Current year in copyright
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Obfuscated contact email
+        var cl = document.getElementById('contact-link');
+        cl.href = 'mai' + 'lto:' + 'hello' + '@' + 'onekash' + '.org';
 
         // Scroll progress bar
         const scrollProgress = document.querySelector('.scroll-progress');

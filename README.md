@@ -6,7 +6,7 @@ Privacy-focused apps and developer tools. No tracking. No accounts. No nonsense.
 
 ## Apps
 
-**[KashCal](https://kashcal.github.io)** - A modern calendar that works offline and syncs with iCloud.
+**[KashCal](https://kashcal.github.io)** - Modern calendar that works offline and syncs with iCloud.
 [GitHub](https://github.com/KashCal/KashCal) · [F-Droid](https://f-droid.org/en/packages/org.onekash.kashcal/) · [Download](https://github.com/KashCal/KashCal/releases/latest)
 
 **[KashCake](https://github.com/KashCal/KashCake)** - Never forget a birthday. Syncs with contacts, stays on your device.

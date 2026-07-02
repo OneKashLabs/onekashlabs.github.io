@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneKash Labs — Experiments that escaped the lab</title>
+    <meta name="description" content="A small open-source lab, best known (of all things) for a calendar. Apps and developer tools that run on your device. No tracking, no accounts.">
+    <meta name="author" content="OneKash Labs">
+    <meta name="theme-color" content="#0D1413">
+    <meta name="color-scheme" content="dark">
+
+    <link rel="canonical" href="https://onekash.org/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://onekash.org/">
+    <meta property="og:title" content="OneKash Labs — Experiments that escaped the lab">
+    <meta property="og:description" content="A small open-source lab, best known (of all things) for a calendar. Apps and developer tools that run on your device.">
+    <meta property="og:image" content="https://onekash.org/images/logo.png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+    <meta property="og:site_name" content="OneKash Labs">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="OneKash Labs — Experiments that escaped the lab">
+    <meta name="twitter:description" content="A small open-source lab, best known (of all things) for a calendar. Apps and developer tools that run on your device.">
+    <meta name="twitter:image" content="https://onekash.org/images/logo.png">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "OneKash Labs",
+        "url": "https://onekash.org",
+        "logo": "https://onekash.org/images/logo.png",
+        "description": "A small open-source lab building privacy-first apps and developer tools. No tracking, no accounts.",
+        "sameAs": [
+            "https://github.com/OneKashLabs",
+            "https://github.com/0nekash",
+            "https://0nekash.github.io"
+        ],
+        "founder": {
+            "@type": "Person",
+            "name": "onekash",
+            "url": "https://0nekash.github.io"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "OneKash Labs Products",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@type": "SoftwareApplication",
+                    "name": "KashCal",
+                    "url": "https://kashcal.onekash.org",
+                    "operatingSystem": "Android",
+                    "applicationCategory": "UtilitiesApplication",
+                    "description": "A modern calendar that works offline and syncs iCloud, CalDAV, holidays, and birthdays. Your schedule stays on your device.",
+                    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+                    "author": { "@type": "Organization", "name": "OneKash Labs", "url": "https://onekash.org" }
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@type": "SoftwareApplication",
+                    "name": "KashCake",
+                    "operatingSystem": "Android",
+                    "applicationCategory": "UtilitiesApplication",
+                    "description": "Birthday reminders from your contacts. Never miss a celebration. Stays on your device.",
+                    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+                    "author": { "@type": "Organization", "name": "OneKash Labs", "url": "https://onekash.org" }
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                    "@type": "SoftwareSourceCode",
+                    "name": "iCloud Calendar MCP Server",
+                    "url": "https://github.com/icloud-calendar-mcp/icloud-calendar-mcp",
+                    "codeRepository": "https://github.com/icloud-calendar-mcp/icloud-calendar-mcp",
+                    "programmingLanguage": "Kotlin",
+                    "description": "MCP server for iCloud Calendar. CLI-based calendar access for AI agents.",
+                    "author": { "@type": "Organization", "name": "OneKash Labs", "url": "https://onekash.org" }
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "item": {
+                    "@type": "SoftwareSourceCode",
+                    "name": "iCalDAV",
+                    "url": "https://icaldav.github.io",
+                    "codeRepository": "https://github.com/iCalDAV/iCalDAV",
+                    "programmingLanguage": "Kotlin",
+                    "description": "Kotlin CalDAV client with offline sync and conflict resolution. Powers KashCal's calendar sync.",
+                    "author": { "@type": "Organization", "name": "OneKash Labs", "url": "https://onekash.org" }
+                }
+            }
+        ]
+    }
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="images/logo.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo-32-favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/logo-16-favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/logo-180-apple-touch.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+:root{
+  --ink:#0D1413;--ink-2:#14201E;--ink-3:#1A2A27;
+  --line:rgba(230,240,237,.09);--line-2:rgba(230,240,237,.15);
+  --fg:#EEF3F1;--fg-2:#A9B7B2;--fg-3:#7C8B86;
+  --teal:#45C2AD;--teal-dim:rgba(69,194,173,.12);--brass:#F4B740;--brass-dim:rgba(244,183,64,.12);
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;--serif:'Fraunces',Georgia,serif;--mono:'JetBrains Mono',ui-monospace,monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--ink);color:var(--fg);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:'';position:fixed;top:0;left:0;right:0;height:70vh;background:radial-gradient(ellipse 45% 55% at 18% -5%,rgba(69,194,173,.09),transparent),radial-gradient(ellipse 45% 50% at 85% 0%,rgba(244,183,64,.055),transparent);pointer-events:none;z-index:0}
+
+nav{position:fixed;top:0;left:0;right:0;padding:.9rem 2rem;background:rgba(13,20,19,.82);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);z-index:100;display:flex;justify-content:space-between;align-items:center}
+.logo{color:var(--fg);text-decoration:none;display:flex;align-items:center;gap:.65rem;font-family:var(--serif);font-size:1.2rem;font-weight:500}
+.logo img{width:30px;height:30px;border-radius:7px;display:block}
+.nav-links{display:flex;gap:1.75rem;font:500 .82rem/1 var(--mono)}
+.nav-links a{color:var(--fg-3);text-decoration:none;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:var(--fg)}
+
+.hero{min-height:100vh;display:flex;align-items:center;padding:7rem 2rem 4rem;position:relative;z-index:1}
+.hero__inner{max-width:1080px;margin:0 auto;width:100%;display:grid;grid-template-columns:1.05fr .95fr;gap:4rem;align-items:center}
+.hero__copy{text-align:left}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(2.4rem,5vw,3.7rem);line-height:1.05;letter-spacing:-.02em;margin-bottom:1.4rem}
+.hero__sub{font-size:1.1rem;color:var(--fg-2);max-width:24em;margin-bottom:2.25rem}
+.hero__cta{display:inline-flex;align-items:center;gap:.55rem;font:500 .86rem/1 var(--mono);color:var(--teal);text-decoration:none;padding:.8rem 1.5rem;border:1px solid var(--line);border-radius:100px;transition:border-color .25s,box-shadow .25s,gap .25s}
+.hero__cta .p{color:var(--fg-3)}
+.hero__cta:hover{border-color:var(--teal);box-shadow:0 0 24px var(--teal-dim);gap:.85rem}
+.hero__right{display:flex;justify-content:flex-end}
+.hero__panel{width:100%;max-width:440px}
+.hero__caption{font:500 .82rem/1.5 var(--mono);color:var(--fg-2);margin-bottom:.9rem}
+
+.netlog{width:100%;background:var(--ink-2);border:1px solid var(--line);border-radius:12px;overflow:hidden;text-align:left;box-shadow:0 24px 60px rgba(0,0,0,.4)}
+.netlog__bar{display:flex;align-items:center;gap:8px;padding:11px 14px;border-bottom:1px solid var(--line);background:rgba(0,0,0,.2)}
+.dot{width:10px;height:10px;border-radius:50%}
+.dot--r{background:#e06c62}.dot--y{background:#e0b862}.dot--g{background:#63c98a}
+.netlog__title{margin-left:6px;font:500 .74rem/1 var(--mono);color:var(--fg-3)}
+.netlog__cols{display:flex;justify-content:space-between;padding:9px 16px;font:500 .66rem/1 var(--mono);color:var(--fg-3);border-bottom:1px solid var(--line);text-transform:uppercase;letter-spacing:.06em}
+.netlog__empty{padding:34px 16px;text-align:center}
+.netlog__empty .big{font:500 1rem/1.4 var(--mono);color:var(--teal);margin-bottom:6px}
+.netlog__empty .small{font:400 .78rem/1.5 var(--mono);color:var(--fg-3)}
+.netlog__foot{display:flex;gap:6px 14px;flex-wrap:wrap;padding:11px 16px;border-top:1px solid var(--line);font:500 .72rem/1 var(--mono);color:var(--fg-3);background:rgba(0,0,0,.14)}
+.netlog__foot .ok{color:var(--teal)}
+.netlog__foot .sep{opacity:.4}
+
+.section{padding:6rem 1.5rem;max-width:1080px;margin:0 auto;position:relative;z-index:1}
+.section__label{font:600 .72rem/1 var(--mono);color:var(--brass);text-transform:uppercase;letter-spacing:.16em;text-align:center;margin-bottom:.75rem}
+.section__label .slash{opacity:.55}
+.section__title{font-family:var(--serif);font-weight:500;font-size:clamp(1.8rem,4vw,2.6rem);letter-spacing:-.01em;text-align:center;margin-bottom:3.25rem}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem}
+.grid--tools{max-width:880px;margin:0 auto}
+.grid--apps{grid-template-columns:1fr;max-width:880px;margin:0 auto}
+
+.card{position:relative;background:var(--ink-2);border:1px solid var(--line);border-radius:16px;padding:2rem;overflow:hidden;transition:border-color .25s,background .25s,transform .25s}
+.card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--teal);transform:scaleY(0);transform-origin:top;transition:transform .28s cubic-bezier(.16,1,.3,1)}
+.card:hover{border-color:var(--line-2);background:var(--ink-3);transform:translateY(-2px)}
+.card:hover::before{transform:scaleY(1)}
+.card__head{display:flex;align-items:center;gap:.85rem;margin-bottom:.9rem}
+.card__icon{width:46px;height:46px;border-radius:11px;flex-shrink:0;object-fit:cover;background:var(--ink-3)}
+.card__icon--mono{display:flex;align-items:center;justify-content:center;font-size:1.5rem;background:var(--teal-dim)}
+.card__name{font-family:var(--serif);font-weight:500;font-size:1.3rem}
+.card__desc{color:var(--fg-2);font-size:.95rem;line-height:1.55;margin-bottom:1.25rem}
+.card__install{background:rgba(0,0,0,.28);border:1px solid var(--line);border-radius:9px;padding:.7rem .9rem;margin-bottom:1.25rem;font:500 .82rem/1 var(--mono);color:var(--fg-2);overflow-x:auto}
+.card__install .p{color:var(--teal);margin-right:8px}
+.card__links{display:flex;gap:1rem;flex-wrap:wrap}
+.card__links a{font:500 .82rem/1 var(--mono);color:var(--fg-3);text-decoration:none;transition:color .2s}
+.card__links a:hover{color:var(--teal)}
+.card__links a[href^="http"]::after{content:" ↗";opacity:.5}
+.tag{display:inline-flex;align-items:center;gap:5px;font:500 .68rem/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;padding:4px 9px;border-radius:6px;margin-left:auto;flex-shrink:0}
+.tag--fdroid{color:var(--brass);background:var(--brass-dim)}
+
+.card--row{display:flex;align-items:center;gap:1.75rem;text-align:left;padding:1.75rem 2rem}
+.card--row .card__icon{width:64px;height:64px;border-radius:14px}
+.card--row .card__body{flex:1;min-width:0}
+.card--row .card__head{margin-bottom:.4rem}
+.card--row .card__desc{margin-bottom:.9rem}
+@media(max-width:600px){.card--row{flex-direction:column;align-items:flex-start;gap:1rem}}
+
+.philo{padding:6rem 1.5rem;max-width:1000px;margin:0 auto;position:relative;z-index:1}
+.philo__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:1.25rem}
+.philo__item{background:var(--ink-2);border:1px solid var(--line);border-radius:14px;padding:1.75rem 1.4rem;transition:border-color .25s}
+.philo__item:hover{border-color:var(--line-2)}
+.philo__k{font:600 .74rem/1 var(--mono);color:var(--brass);margin-bottom:.7rem}
+.philo__k .slash{opacity:.55}
+.philo__item h3{font-size:1rem;font-weight:600;margin-bottom:.4rem}
+.philo__item p{color:var(--fg-2);font-size:.9rem;line-height:1.5}
+
+footer{padding:3.5rem 1.5rem;text-align:center;border-top:1px solid var(--line);position:relative;z-index:1}
+.footer__text{font:400 .82rem/1.6 var(--mono);color:var(--fg-3);margin-bottom:.6rem}
+.footer__link{font:500 .84rem/1 var(--mono);color:var(--fg-2);text-decoration:none}
+.footer__link:hover{color:var(--teal)}
+
+a:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:6px}
+
+@media (max-width:820px){.hero__inner{grid-template-columns:1fr;gap:2.5rem}.hero__right{justify-content:flex-start}}
+@media (max-width:768px){.philo__grid{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.nav-links{gap:1.25rem}.hero{padding:6rem 1.5rem 3rem}.section{padding:4rem 1.5rem}}
+@media (max-width:480px){.philo__grid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+    </style>
+</head>
+<body>
+<nav>
+  <a href="#" class="logo"><img src="images/logo.svg" alt="OneKash Labs"> OneKash&nbsp;Labs</a>
+  <div class="nav-links"><a href="#apps">Apps</a><a href="#tools">Tools</a><a href="#ethos">Ethos</a></div>
+</nav>
+
+<section class="hero">
+  <div class="hero__inner">
+    <div class="hero__copy">
+      <h1>Experiments that escaped the lab</h1>
+      <p class="hero__sub">A small open-source lab, best known (of all things) for a calendar.</p>
+      <a href="#apps" class="hero__cta"><span class="p">$</span> ls ~/apps <span>↓</span></a>
+    </div>
+    <div class="hero__right">
+      <div class="hero__panel">
+        <p class="hero__caption">Here's what we send to our servers:</p>
+        <div class="netlog">
+          <div class="netlog__bar"><span class="dot dot--r"></span><span class="dot dot--y"></span><span class="dot dot--g"></span><span class="netlog__title">Network</span></div>
+          <div class="netlog__cols"><span>Name</span><span>Type</span><span>Size</span></div>
+          <div class="netlog__empty"><p class="big">— no requests —</p><p class="small">nothing left your device</p></div>
+          <div class="netlog__foot"><span class="ok">0 requests</span><span class="sep">·</span>0 B transferred<span class="sep">·</span>0 trackers<span class="sep">·</span>0 accounts</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="apps">
+  <p class="section__label"><span class="slash">//</span> apps</p>
+  <h2 class="section__title">For everyone</h2>
+  <div class="grid grid--apps">
+    <div class="card card--row">
+      <img class="card__icon" src="images/kashcal-icon-new.png" alt="KashCal" loading="lazy">
+      <div class="card__body">
+        <div class="card__head">
+          <span class="card__name">KashCal</span>
+          <span class="tag tag--fdroid">F-Droid</span>
+        </div>
+        <p class="card__desc">A modern calendar that works offline and syncs iCloud, CalDAV, holidays, and birthdays. Your schedule stays on your device.</p>
+        <div class="card__links">
+          <a href="https://kashcal.onekash.org">Website</a>
+          <a href="https://github.com/KashCal/KashCal">GitHub</a>
+          <a href="https://f-droid.org/en/packages/org.onekash.kashcal/">F-Droid</a>
+        </div>
+      </div>
+    </div>
+    <div class="card card--row">
+      <img class="card__icon" src="images/kashcake-icon.svg" alt="KashCake" loading="lazy">
+      <div class="card__body">
+        <div class="card__head">
+          <span class="card__name">KashCake</span>
+        </div>
+        <p class="card__desc">Never forget a birthday. Pulls from your contacts, computes reminders on-device, and stays there.</p>
+        <div class="card__links">
+          <a href="https://github.com/KashCal/KashCake">GitHub</a>
+          <a href="https://github.com/KashCal/KashCake/releases/latest">Download</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="tools">
+  <p class="section__label"><span class="slash">//</span> power tools</p>
+  <h2 class="section__title">For the technically inclined</h2>
+  <div class="grid grid--tools">
+    <div class="card">
+      <div class="card__head">
+        <span class="card__icon card__icon--mono">☁</span>
+        <span class="card__name">iCloud Calendar MCP</span>
+      </div>
+      <p class="card__desc">An MCP server that gives AI agents read and write access to iCloud Calendar. On the MCP Registry, npm, and PyPI.</p>
+      <div class="card__install"><span class="p">$</span>npx @icloud-calendar-mcp/server</div>
+      <div class="card__links">
+        <a href="https://github.com/icloud-calendar-mcp/icloud-calendar-mcp">GitHub</a>
+        <a href="https://www.npmjs.com/package/@icloud-calendar-mcp/server">npm</a>
+        <a href="https://pypi.org/project/icloud-calendar-mcp/">PyPI</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card__head">
+        <img class="card__icon" src="images/icaldav-icon.svg" alt="iCalDAV" loading="lazy">
+        <span class="card__name">iCalDAV</span>
+      </div>
+      <p class="card__desc">A Kotlin CalDAV client with offline sync and conflict resolution. The engine that powers KashCal's calendar sync.</p>
+      <div class="card__links">
+        <a href="https://icaldav.github.io">Website</a>
+        <a href="https://github.com/iCalDAV/iCalDAV">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="philo" id="ethos">
+  <p class="section__label"><span class="slash">//</span> ethos</p>
+  <h2 class="section__title">How we think about software</h2>
+  <div class="philo__grid">
+    <div class="philo__item">
+      <p class="philo__k"><span class="slash">//</span> 01</p>
+      <h3>Your data is yours</h3>
+      <p>It lives on your device. We never see it, store it, or sell it.</p>
+    </div>
+    <div class="philo__item">
+      <p class="philo__k"><span class="slash">//</span> 02</p>
+      <h3>Open by default</h3>
+      <p>All our code is public. Read it, fork it, audit it.</p>
+    </div>
+    <div class="philo__item">
+      <p class="philo__k"><span class="slash">//</span> 03</p>
+      <h3>Design matters</h3>
+      <p>Beautiful interfaces aren't just for Big Tech.</p>
+    </div>
+    <div class="philo__item">
+      <p class="philo__k"><span class="slash">//</span> 04</p>
+      <h3>Does one thing well</h3>
+      <p>Each app has one job. It does it well.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="footer__text">© <span id="year">2026</span> OneKash Labs · no data collected, ever</p>
+  <a class="footer__link" id="contact" href="#">// say hi ↗</a>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  // obfuscated contact email
+  document.getElementById('contact').href = 'mai' + 'lto:' + 'hello' + '@' + 'onekash' + '.org';
+  // active nav highlight
+  const links = document.querySelectorAll('.nav-links a');
+  const io = new IntersectionObserver((es) => es.forEach(e => {
+    if (e.isIntersecting) links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
+  }), { rootMargin: '-50% 0px -50% 0px' });
+  document.querySelectorAll('section[id]').forEach(s => io.observe(s));
+</script>
+</body>
+</html>

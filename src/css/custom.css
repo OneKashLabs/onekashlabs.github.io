@@ -1,0 +1,146 @@
+/* Fonts are served from the site itself, so a visit makes no request to a third party. */
+@import '@fontsource-variable/bricolage-grotesque/opsz.css';
+@import '@fontsource-variable/figtree';
+
+/* OneKash Labs: the same type and layout as the KashCal and KashPass sites. The page stays
+   neutral so each app's icon brings its own colour; links take the teal of Kash, the mascot. */
+:root {
+  --ifm-color-primary: #0e6e62;
+  --ifm-color-primary-dark: #0c6358;
+  --ifm-color-primary-darker: #0b5d53;
+  --ifm-color-primary-darkest: #094c44;
+  --ifm-color-primary-light: #107a6c;
+  --ifm-color-primary-lighter: #118071;
+  --ifm-color-primary-lightest: #159a88;
+
+  --ok-band: #11141c;
+  --ok-mist: #f3f4f6;
+  --ok-paper: #fbfbfc;
+  --ok-ink: #15171f;
+  --ok-line: rgba(21, 23, 31, 0.1);
+
+  --ifm-background-color: var(--ok-paper);
+  --ifm-background-surface-color: #ffffff;
+  --ifm-font-color-base: #1a1c24;
+  --ifm-font-family-base: 'Figtree Variable', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --ifm-heading-font-family: 'Bricolage Grotesque Variable', 'Figtree Variable', system-ui, sans-serif;
+  --ifm-font-family-monospace: ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --ifm-heading-font-weight: 700;
+  --ifm-navbar-background-color: rgba(251, 251, 252, 0.85);
+  --ifm-navbar-shadow: inset 0 -1px 0 var(--ok-line);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #45c2ad;
+  --ifm-color-primary-dark: #34b8a1;
+  --ifm-color-primary-darker: #31ae99;
+  --ifm-color-primary-darkest: #28907e;
+  --ifm-color-primary-light: #5cc9b7;
+  --ifm-color-primary-lighter: #68cdbc;
+  --ifm-color-primary-lightest: #8bdacd;
+
+  --ok-band: #151923;
+  --ok-mist: #10131a;
+  --ok-paper: #0b0d12;
+  --ok-ink: #e9ebf1;
+  --ok-line: rgba(255, 255, 255, 0.1);
+
+  --ifm-background-color: var(--ok-paper);
+  --ifm-background-surface-color: #12151d;
+  --ifm-font-color-base: #e3e6ed;
+  --ifm-navbar-background-color: rgba(11, 13, 18, 0.85);
+}
+
+html { scroll-behavior: smooth; }
+body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+h1, h2, h3 { letter-spacing: -0.02em; line-height: 1.08; }
+
+/* The blur would clip the mobile sidebar to the bar's height, so it is desktop only. */
+@media (min-width: 997px) {
+  .navbar { backdrop-filter: saturate(160%) blur(12px); }
+}
+.navbar__title { font-family: var(--ifm-heading-font-family); font-weight: 700; letter-spacing: -0.01em; font-size: 1.2rem; }
+
+/* Hero: the one dark band, with Kash above the three app icons. */
+.ok-hero { background: var(--ok-band); color: #eceef4; padding: clamp(4rem, 9vw, 6.5rem) 0 clamp(3.5rem, 7vw, 5rem); }
+.ok-hero__inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3rem; align-items: center; }
+.ok-hero__title { font-size: clamp(2.6rem, 5vw, 4.2rem); line-height: 0.98; margin: 0 0 1.25rem; color: #fbfbfc; text-wrap: balance; max-width: 13em; }
+.ok-hero__lead { font-size: 1.2rem; line-height: 1.55; color: rgba(236, 238, 244, 0.8); max-width: 30rem; margin: 0 0 2rem; }
+.ok-hero__cta { display: flex; flex-wrap: wrap; gap: 0.85rem; }
+
+.ok-btn {
+  display: inline-flex; align-items: center;
+  padding: 0.8rem 1.4rem; border-radius: 999px;
+  font-weight: 700; font-size: 1.02rem; line-height: 1.2;
+}
+.ok-btn:hover { text-decoration: none; }
+.ok-btn--teal { background: #45c2ad; color: #0b1512; }
+.ok-btn--teal:hover { color: #0b1512; background: #5bd0bc; }
+.ok-btn--line { border: 1.5px solid rgba(255, 255, 255, 0.35); color: #fbfbfc; }
+.ok-btn--line:hover { color: #fbfbfc; border-color: #fbfbfc; }
+
+.ok-hero__art { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+.ok-hero__kash { width: 210px; height: auto; }
+.ok-shelf { display: flex; gap: 1.1rem; list-style: none; margin: 0; padding: 0; }
+.ok-shelf a { display: flex; flex-direction: column; align-items: center; gap: 0.45rem; color: rgba(236, 238, 244, 0.8); font-size: 0.9rem; font-weight: 600; }
+.ok-shelf a:hover { color: #fbfbfc; text-decoration: none; }
+.ok-shelf img { width: 72px; height: 72px; border-radius: 18px; display: block; }
+
+/* Sections */
+.ok-section { padding: 5rem 0; }
+.ok-section + .ok-section { border-top: 1px solid var(--ok-line); }
+.ok-heading { font-size: clamp(1.9rem, 4vw, 2.6rem); margin: 0 0 2rem; }
+
+/* App rows: a list under hairlines, not cards. */
+.ok-apps { list-style: none; margin: 0; padding: 0; max-width: 46rem; }
+.ok-app { display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 1.5rem; padding: 1.75rem 0; border-top: 1px solid var(--ok-line); scroll-margin-top: 5rem; }
+.ok-app:last-child { border-bottom: 1px solid var(--ok-line); }
+.ok-app__icon { width: 72px; height: 72px; border-radius: 18px; display: block; }
+.ok-app__icon--light { background: #f4f7f6; padding: 6px; }
+.ok-app h3 { font-size: 1.4rem; margin: 0 0 0.3rem; scroll-margin-top: 6rem; }
+.ok-app p { margin: 0 0 0.8rem; color: var(--ifm-color-emphasis-800); max-width: 34rem; }
+.ok-links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.3rem; font-weight: 600; }
+.ok-install { display: inline-block; margin: 0 0 0.9rem; padding: 0.55rem 0.85rem; border: 1px solid var(--ok-line); border-radius: 10px; font-size: 0.88rem; max-width: 100%; overflow-x: auto; white-space: nowrap; }
+
+/* How we build: four short statements in two columns. */
+.ok-rules { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 3rem; max-width: 52rem; }
+.ok-rules div { padding: 1.1rem 0 1.2rem; border-top: 1px solid var(--ok-line); }
+.ok-rules h3 { font-size: 1.2rem; margin: 0 0 0.3rem; }
+.ok-rules p { margin: 0; color: var(--ifm-color-emphasis-800); }
+
+/* Footer: one centred row of links, as on the KashCal and KashPass sites. */
+.footer {
+  --ifm-footer-background-color: var(--ok-mist);
+  --ifm-footer-color: var(--ifm-color-emphasis-700);
+  --ifm-footer-link-color: var(--ifm-color-emphasis-800);
+  --ifm-footer-link-hover-color: var(--ifm-color-primary);
+  padding: 1.5rem 0 1.25rem;
+  border-top: 1px solid var(--ok-line);
+  font-size: 0.88rem;
+}
+.footer__links { margin-bottom: 0.6rem; display: flex; justify-content: center; }
+.footer__title { display: none; }
+.footer__col { margin-bottom: 0; }
+.footer .col { --ifm-spacing-horizontal: 0; }
+.footer__items { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem 1.5rem; }
+.footer__item { padding: 0; }
+.footer__bottom { font-size: 0.82rem; color: var(--ifm-color-emphasis-600); }
+
+/* Keyboard focus */
+a:focus-visible, button:focus-visible { outline: 3px solid var(--ifm-color-primary); outline-offset: 2px; border-radius: 6px; }
+.ok-hero a:focus-visible { outline-color: #fbfbfc; }
+
+@media (max-width: 996px) {
+  .ok-hero__inner { grid-template-columns: 1fr; gap: 2.5rem; }
+  .ok-hero__art { align-items: center; }
+  .ok-rules { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .ok-section { padding: 3.5rem 0; }
+  .ok-hero__title { font-size: clamp(2.2rem, 11vw, 2.8rem); }
+  .ok-hero__kash { width: 160px; }
+  .ok-shelf img { width: 60px; height: 60px; border-radius: 15px; }
+  .ok-app { grid-template-columns: 56px minmax(0, 1fr); gap: 1.1rem; }
+  .ok-app__icon { width: 56px; height: 56px; border-radius: 14px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

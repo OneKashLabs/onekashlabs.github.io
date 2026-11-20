@@ -3,7 +3,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'OneKash Labs',
-  tagline: 'Apps and tools that keep your data with you',
+  tagline: 'Private, open-source apps',
   favicon: 'images/logo-32-favicon.png',
   future: {v4: true},
   url: 'https://onekash.org',
@@ -27,7 +27,6 @@ const config: Config = {
         name: 'OneKash Labs',
         url: 'https://onekash.org',
         logo: 'https://onekash.org/images/logo.png',
-        email: 'hello@onekash.org',
         sameAs: ['https://github.com/OneKashLabs', 'https://github.com/0nekash', 'https://0nekash.github.io'],
       }),
     },
@@ -118,8 +117,8 @@ const config: Config = {
       {property: 'og:site_name', content: 'OneKash Labs'},
       {property: 'og:image:width', content: '1200'},
       {property: 'og:image:height', content: '675'},
-      {property: 'og:image:alt', content: 'Apps and tools that keep your data with you. Kash, the OneKash Labs mascot, above the KashCal, KashPass and KashCake icons.'},
-      {name: 'twitter:image:alt', content: 'Apps and tools that keep your data with you. Kash, the OneKash Labs mascot, above the KashCal, KashPass and KashCake icons.'},
+      {property: 'og:image:alt', content: 'OneKash Labs: What should we build together? The KashCal, KashPass, KashCake and iCloud Calendar MCP icons, a space for one more, and Kash waving.'},
+      {name: 'twitter:image:alt', content: 'OneKash Labs: What should we build together? The KashCal, KashPass, KashCake and iCloud Calendar MCP icons, a space for one more, and Kash waving.'},
     ],
     colorMode: {respectPrefersColorScheme: true},
     navbar: {
@@ -127,7 +126,6 @@ const config: Config = {
       logo: {alt: 'OneKash Labs logo', src: 'images/logo.svg'},
       items: [
         {to: '/#apps', label: 'Apps', position: 'left', activeBaseRegex: '^$'},
-        {to: '/#developers', label: 'Developers', position: 'left', activeBaseRegex: '^$'},
         {href: 'https://github.com/sponsors/one-kash', label: 'Donate', position: 'right'},
         {href: 'https://github.com/OneKashLabs', label: 'GitHub', position: 'right'},
       ],
@@ -139,10 +137,10 @@ const config: Config = {
           items: [
             {label: 'KashCal', href: 'https://kashcal.onekash.org'},
             {label: 'KashPass', href: 'https://kashpass.onekash.org'},
-            {label: 'KashCake', href: 'https://github.com/OneKashLabs/KashCake'},
+            {label: 'KashCake', href: 'https://kashcake.onekash.org'},
             {label: 'GitHub', href: 'https://github.com/OneKashLabs'},
             {label: 'Donate', href: 'https://github.com/sponsors/one-kash'},
-            {label: 'Contact', href: 'mailto:hello@onekash.org'},
+            {label: 'Contact', to: '/#talk'},
           ],
         },
       ],

@@ -39,7 +39,7 @@ const config: Config = {
         url: 'https://onekash.org',
         description: 'OneKash Labs makes private, open-source apps, and helps people learn to build, customize, and run their own.',
         logo: 'https://onekash.org/images/logo.png',
-        sameAs: ['https://github.com/OneKashLabs', 'https://github.com/0nekash', 'https://0nekash.github.io'],
+        sameAs: ['https://github.com/OneKashLabs', 'https://github.com/0nekash'],
       }),
     },
     {

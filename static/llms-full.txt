@@ -59,7 +59,12 @@ An MCP (Model Context Protocol) server that gives AI agents read and write acces
 - Durable event handles across sessions, correct handling of recurring events, bounded responses.
 - Security aligned with the OWASP MCP Top 10. Uses an app-specific password, never the main account password.
 - Published on the MCP Registry, npm, and PyPI.
+Website: https://mcp.onekash.org
 Source: https://github.com/icloud-calendar-mcp/icloud-calendar-mcp
+
+## More detail on each app
+
+Each app's site has its own llms.txt and llms-full.txt: https://kashcal.onekash.org, https://kashpass.onekash.org, https://kashcake.onekash.org, and https://mcp.onekash.org (add /llms.txt or /llms-full.txt).
 
 ## Support
 Support our work: https://github.com/sponsors/one-kash

@@ -9,7 +9,7 @@ import '../css/home.css';
 const KASHCAL = 'https://kashcal.onekash.org';
 const KASHPASS = 'https://kashpass.onekash.org';
 const KASHCAKE = 'https://kashcake.onekash.org';
-const MCP = 'https://github.com/icloud-calendar-mcp/icloud-calendar-mcp';
+const MCP = 'https://mcp.onekash.org';
 
 /**
  * Returns the mailto link for an optional subject, built only after load so the address never

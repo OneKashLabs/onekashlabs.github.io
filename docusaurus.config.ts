@@ -39,7 +39,7 @@ const config: Config = {
         url: 'https://onekash.org',
         description: 'OneKash Labs makes private, open-source apps, and helps people learn to build, customize, and run their own.',
         logo: 'https://onekash.org/images/logo.png',
-        sameAs: ['https://github.com/OneKashLabs', 'https://github.com/0nekash'],
+        sameAs: ['https://github.com/OneKashLabs'],
       }),
     },
     {
@@ -98,7 +98,7 @@ const config: Config = {
             item: {
               '@type': 'SoftwareSourceCode',
               name: 'iCloud Calendar MCP',
-              url: 'https://github.com/icloud-calendar-mcp/icloud-calendar-mcp',
+              url: 'https://mcp.onekash.org',
               codeRepository: 'https://github.com/icloud-calendar-mcp/icloud-calendar-mcp',
               description: 'An MCP server that gives AI agents read and write access to iCloud Calendar.',
               author: {'@id': 'https://onekash.org/#org'},

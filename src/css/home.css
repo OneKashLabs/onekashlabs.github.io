@@ -130,8 +130,20 @@ html.okh-page[data-theme='dark'], html.okh-page[data-theme='dark'] body { backgr
   /* On its own: beside transform, the minifier folds translate into it and drops the reset. */
   .okh .fan .pass { translate: 0 0; }
 }
+/* Each header item stays on one line; on phones the header scales down so they keep a gap. */
+.okh .top { gap: 16px; }
+.okh .top .name, .okh .top a.mail { white-space: nowrap; }
 @media (max-width: 480px) {
+  .okh .top { padding: 20px 0; }
+  .okh .name { font-size: 17px; gap: 9px; }
+  .okh .top .name img { width: 30px; height: 30px; border-radius: 8px; }
+  .okh .top-end { gap: 12px; }
   .okh .top a.mail { font-size: 15px; }
+  .okh .top .theme-toggle button { width: 2rem; height: 2rem; }
+}
+/* Too narrow for all three: Start a project, right below, leads to the same place. */
+@media (max-width: 339px) {
+  .okh .top a.mail { display: none; }
 }
 [data-theme='dark'] .okh { --paper: #1C1C1E; --ink: #F2F2F0; --ink-soft: #A6A6AD; --rule: #34343A; --accent: #4D96FF; --on-accent: #111114; --accent-hover: #74ADFF; --card: #26262A; --slot: #FFFFFF; --graphite: #26262A; }
 [data-theme='dark'] .okh footer { background: #161618; }

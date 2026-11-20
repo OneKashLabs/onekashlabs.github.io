@@ -119,8 +119,8 @@ export default function Home(): ReactNode {
 
       <section className="built" id="apps">
         <div className="wrap">
-          <h2>Apps we make and maintain.</h2>
-          <p className="lead">Open source, no ads, nothing collected. Out in the world today.</p>
+          <h2>Apps you can use today.</h2>
+          <p className="lead">Open source, no ads, and nothing collected.</p>
           <div className="fan">
             <figure className="cal">
               <figcaption><a href={KASHCAL}><img src={img('kashcal.webp')} alt="" width={32} height={32} loading="lazy" decoding="async" />KashCal</a></figcaption>

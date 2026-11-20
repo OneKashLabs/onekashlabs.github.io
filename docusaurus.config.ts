@@ -16,7 +16,7 @@ const config: Config = {
   headTags: [
     {tagName: 'link', attributes: {rel: 'icon', type: 'image/svg+xml', href: '/images/logo.svg'}},
     {tagName: 'link', attributes: {rel: 'apple-touch-icon', href: '/images/logo-180-apple-touch.png'}},
-    {tagName: 'meta', attributes: {name: 'theme-color', content: '#020727'}},
+    {tagName: 'meta', attributes: {name: 'theme-color', content: '#1C1C1E'}},
     {
       tagName: 'script',
       attributes: {type: 'application/ld+json'},

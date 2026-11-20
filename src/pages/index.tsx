@@ -3,6 +3,7 @@ import Head from '@docusaurus/Head';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useBrokenLinks from '@docusaurus/useBrokenLinks';
 import Layout from '@theme/Layout';
+import NavbarColorModeToggle from '@theme/Navbar/ColorModeToggle';
 import AskAbout from '@site/src/components/AskAbout';
 import '../css/home.css';
 
@@ -61,6 +62,11 @@ function Phone(): ReactNode {
   );
 }
 
+/** The site's light and dark switch, the same control as on the app sites; the page has no navbar. */
+function ThemeToggle(): ReactNode {
+  return <NavbarColorModeToggle className="theme-toggle" />;
+}
+
 const tile = (bar: string, ink: string) => ({'--tile': bar, '--tile-ink': ink}) as CSSProperties;
 
 export default function Home(): ReactNode {
@@ -86,7 +92,10 @@ export default function Home(): ReactNode {
         <div className="wrap">
           <header className="top">
             <a className="name" href="/"><img src={img('logo.svg')} alt="" width={36} height={36} />OneKash Labs</a>
-            <a className="mail" href={mail()}>Contact us</a>
+            <div className="top-end">
+              <a className="mail" href={mail()}>Contact us</a>
+              <ThemeToggle />
+            </div>
           </header>
           <section className="hero">
             <div>
@@ -103,15 +112,15 @@ export default function Home(): ReactNode {
         <section className="offers" aria-labelledby="offers-h">
           <h2 id="offers-h">Bring your ideas.</h2>
           <div className="tiles">
-            <a className="tile" style={tile('#4A90D9', '#1F5FA8')} href={mail('Bootcamp waitlist')}>
+            <a className="tile" style={tile('#4D96FF', '#1F5FA8')} href={mail('Bootcamp waitlist')}>
               <h3>Learn to build your own app</h3>
               <p>A bootcamp, from first screen to app store. Join the waitlist.</p>
             </a>
-            <a className="tile" style={tile('#EF5F78', '#C2354F')} href="#talk">
+            <a className="tile" style={tile('#FF6B6B', '#C2354F')} href="#talk">
               <h3>An open-source app, with your name on it</h3>
               <p>Your colours and features, where the license allows.</p>
             </a>
-            <a className="tile" style={tile('#1E9E8A', '#0E7364')} href="#talk">
+            <a className="tile" style={tile('#6BCB77', '#2E7D3A')} href="#talk">
               <h3>Our apps for your team</h3>
               <p>You bring the team. We bring the apps and the know-how.</p>
             </a>

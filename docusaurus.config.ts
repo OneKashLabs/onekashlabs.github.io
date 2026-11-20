@@ -16,7 +16,18 @@ const config: Config = {
   headTags: [
     {tagName: 'link', attributes: {rel: 'icon', type: 'image/svg+xml', href: '/images/logo.svg'}},
     {tagName: 'link', attributes: {rel: 'apple-touch-icon', href: '/images/logo-180-apple-touch.png'}},
-    {tagName: 'meta', attributes: {name: 'theme-color', content: '#11141c'}},
+    {tagName: 'meta', attributes: {name: 'theme-color', content: '#020727'}},
+    {
+      tagName: 'script',
+      attributes: {type: 'application/ld+json'},
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'OneKash Labs',
+        url: 'https://onekash.org/',
+        publisher: {'@id': 'https://onekash.org/#org'},
+      }),
+    },
     {
       tagName: 'script',
       attributes: {type: 'application/ld+json'},
@@ -26,6 +37,7 @@ const config: Config = {
         '@id': 'https://onekash.org/#org',
         name: 'OneKash Labs',
         url: 'https://onekash.org',
+        description: 'OneKash Labs makes private, open-source apps, and helps people learn to build, customize and run their own.',
         logo: 'https://onekash.org/images/logo.png',
         sameAs: ['https://github.com/OneKashLabs', 'https://github.com/0nekash', 'https://0nekash.github.io'],
       }),
@@ -75,7 +87,7 @@ const config: Config = {
               url: 'https://github.com/OneKashLabs/KashCake',
               operatingSystem: 'Android',
               applicationCategory: 'LifestyleApplication',
-              description: 'Birthday reminders from your contacts, worked out on your phone.',
+              description: 'Birthday and anniversary reminders from your contacts. No internet access.',
               offers: {'@type': 'Offer', price: '0', priceCurrency: 'USD'},
               author: {'@id': 'https://onekash.org/#org'},
             },
@@ -109,6 +121,7 @@ const config: Config = {
   themeConfig: {
     image: 'images/og.png',
     metadata: [
+      {property: 'og:type', content: 'website'},
       {
         name: 'description',
         content:
@@ -137,7 +150,7 @@ const config: Config = {
           items: [
             {label: 'KashCal', href: 'https://kashcal.onekash.org'},
             {label: 'KashPass', href: 'https://kashpass.onekash.org'},
-            {label: 'KashCake', href: 'https://kashcake.onekash.org'},
+            {label: 'KashCake', href: 'https://github.com/OneKashLabs/KashCake'},
             {label: 'GitHub', href: 'https://github.com/OneKashLabs'},
             {label: 'Donate', href: 'https://github.com/sponsors/one-kash'},
             {label: 'Contact', to: '/#talk'},

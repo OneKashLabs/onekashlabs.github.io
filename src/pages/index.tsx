@@ -8,7 +8,7 @@ import '../css/home.css';
 
 const KASHCAL = 'https://kashcal.onekash.org';
 const KASHPASS = 'https://kashpass.onekash.org';
-const KASHCAKE = 'https://kashcake.onekash.org';
+const KASHCAKE = 'https://github.com/OneKashLabs/KashCake';
 const MCP = 'https://github.com/icloud-calendar-mcp/icloud-calendar-mcp';
 
 /**
@@ -26,7 +26,7 @@ function Phone(): ReactNode {
   const img = (name: string) => useBaseUrl(`/home/${name}`);
   return (
     <div className="stage">
-      <div className="phone" aria-label="Apps by OneKash Labs, and a space for yours">
+      <div className="phone" role="group" aria-label="Apps by OneKash Labs, and a space for yours">
         <div className="bezel">
           <div className="island" aria-hidden="true" />
           <div className="wall">
@@ -39,10 +39,10 @@ function Phone(): ReactNode {
               </span>
             </div>
             <div className="grid">
-              <a className="slot" href={KASHCAL}><img src={img('kashcal.png')} alt="" /><span>KashCal</span></a>
-              <a className="slot" href={KASHPASS}><img src={img('kashpass.png')} alt="" /><span>KashPass</span></a>
-              <a className="slot" href={KASHCAKE}><img src={img('kashcake.png')} alt="" /><span>KashCake</span></a>
-              <a className="slot" href={MCP}><img src={img('mcp.svg')} alt="" /><span>iCloud Calendar MCP</span></a>
+              <a className="slot" href={KASHCAL}><img src={img('kashcal.webp')} alt="" width={72} height={72} /><span>KashCal</span></a>
+              <a className="slot" href={KASHPASS}><img src={img('kashpass.webp')} alt="" width={72} height={72} /><span>KashPass</span></a>
+              <a className="slot" href={KASHCAKE}><img src={img('kashcake.webp')} alt="" width={72} height={72} /><span>KashCake</span></a>
+              <a className="slot" href={MCP}><img src={img('mcp.webp')} alt="" width={72} height={72} /><span>iCloud Calendar MCP</span></a>
               <a className="slot mine" href="#talk"><div className="yours" aria-hidden="true">+</div><span>Yours?</span></a>
               <div className="slot ghost" aria-hidden="true" />
             </div>
@@ -73,11 +73,14 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title="Private, open-source apps"
-      description="OneKash Labs makes private, open-source apps, and helps you learn to build, customize and run yours."
+      description="OneKash Labs makes KashCal, KashPass and KashCake: private, open-source Android apps. We also help you learn to build, customize and run yours."
       noFooter
       wrapperClassName="okh">
       <Head>
         <html className="okh-page" />
+        {/* Brand first on the home page; Layout would append it after the title. */}
+        <title>OneKash Labs: private, open-source apps</title>
+        <meta property="og:title" content="OneKash Labs: private, open-source apps" />
       </Head>
       <div className="wrap">
         <header className="top">
@@ -120,20 +123,20 @@ export default function Home(): ReactNode {
           <p className="lead">Open source, no ads, nothing collected. Out in the world today.</p>
           <div className="fan">
             <figure className="cal">
-              <figcaption><a href={KASHCAL}><img src={img('kashcal.png')} alt="" />KashCal</a></figcaption>
-              <div className="device"><img src={img('screen-kashcal.png')} alt="KashCal's week view" /></div>
+              <figcaption><a href={KASHCAL}><img src={img('kashcal.webp')} alt="" width={32} height={32} loading="lazy" decoding="async" />KashCal</a></figcaption>
+              <div className="device"><img src={img('screen-kashcal.webp')} width={720} height={1600} loading="lazy" decoding="async" alt="KashCal's week view" /></div>
             </figure>
             <figure className="pass">
-              <figcaption><a href={KASHPASS}><img src={img('kashpass.png')} alt="" />KashPass</a></figcaption>
-              <div className="device"><img src={img('screen-kashpass.png')} alt="KashPass's entry list" /></div>
+              <figcaption><a href={KASHPASS}><img src={img('kashpass.webp')} alt="" width={32} height={32} loading="lazy" decoding="async" />KashPass</a></figcaption>
+              <div className="device"><img src={img('screen-kashpass.webp')} width={720} height={1600} loading="lazy" decoding="async" alt="KashPass's entry list" /></div>
             </figure>
             <figure className="cake">
-              <figcaption><a href={KASHCAKE}><img src={img('kashcake.png')} alt="" />KashCake</a></figcaption>
-              <div className="device"><img src={img('screen-kashcake.png')} alt="KashCake's list of upcoming dates" /></div>
+              <figcaption><a href={KASHCAKE}><img src={img('kashcake.webp')} alt="" width={32} height={32} loading="lazy" decoding="async" />KashCake</a></figcaption>
+              <div className="device"><img src={img('screen-kashcake.webp')} width={720} height={1600} loading="lazy" decoding="async" alt="KashCake's list of upcoming dates" /></div>
             </figure>
           </div>
           <p className="tool">
-            <img src={img('mcp.svg')} alt="" />
+            <img src={img('mcp.webp')} alt="" width={40} height={40} loading="lazy" decoding="async" />
             <span><a href={MCP}><strong>iCloud Calendar MCP</strong></a>: calendar access for AI agents.</span>
           </p>
         </div>

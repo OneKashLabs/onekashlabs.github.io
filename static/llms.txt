@@ -1,0 +1,24 @@
+# OneKash Labs
+
+> OneKash Labs makes private, open-source apps: no ads, no tracking, nothing collected. It also helps people learn to build their own app, customize an open-source app (where its license allows), and run its apps for a team.
+
+Full text for AI assistants: https://onekash.org/llms-full.txt
+
+## Apps
+
+- [KashCal](https://kashcal.onekash.org): all your calendars in one private Android app. iCloud, CalDAV, ICS subscriptions and the phone's own calendars. Works offline.
+- [KashPass](https://kashpass.onekash.org): open and edit your KeePass vault on Android. No internet permission.
+- [KashCake](https://github.com/OneKashLabs/KashCake): birthday and anniversary reminders from your contacts on Android. No internet access.
+- [iCloud Calendar MCP](https://github.com/icloud-calendar-mcp/icloud-calendar-mcp): an MCP server that gives AI agents read and write access to iCloud Calendar over CalDAV.
+
+## Work with us
+
+- Learn to build your own app: a bootcamp from first screen to app store. Waitlist open.
+- An open-source app with your name on it: your colours and features, where the license allows.
+- Our apps for your team: we set them up and help your team use them.
+- Contact: the Contact us button on https://onekash.org
+
+## Optional
+
+- [Source code](https://github.com/OneKashLabs)
+- [Support our work](https://github.com/sponsors/one-kash)

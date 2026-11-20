@@ -6,7 +6,7 @@ Full text for AI assistants: https://onekash.org/llms-full.txt
 
 ## Apps
 
-- [KashCal](https://kashcal.onekash.org): all your calendars in one private Android app. iCloud, CalDAV, ICS subscriptions and the phone's own calendars. Works offline.
+- [KashCal](https://kashcal.onekash.org): all your calendars in one private Android app. iCloud, CalDAV, ICS subscriptions, and the phone's own calendars. Works offline.
 - [KashPass](https://kashpass.onekash.org): open and edit your KeePass vault on Android. No internet permission.
 - [KashCake](https://kashcake.onekash.org): birthday and anniversary reminders from your contacts on Android. No internet access.
 - [iCloud Calendar MCP](https://github.com/icloud-calendar-mcp/icloud-calendar-mcp): an MCP server that gives AI agents read and write access to iCloud Calendar over CalDAV.

@@ -12,18 +12,18 @@ Contact: the Contact us button on https://onekash.org
 A bootcamp that goes from the first screen to publishing in an app store. The waitlist is open; join it through Contact us on onekash.org.
 
 ### An open-source app, with your name on it
-OneKash Labs customizes an open-source app, its own or another project's, with your name, colours and features. Each project starts by checking the app's license: what it allows decides what can be renamed, changed and shipped.
+OneKash Labs customizes an open-source app, its own or another project's, with your name, colours, and features. Each project starts by checking the app's license: what it allows decides what can be renamed, changed, and shipped.
 
 ### Our apps for your team
 You bring the team; OneKash Labs brings the apps and the know-how to set them up and use them.
 
 ## Apps
 
-Every app is open source, has no ads and collects nothing.
+Every app is open source, has no ads, and collects nothing.
 
 ### KashCal
 All your calendars in one private app on Android.
-- Syncs iCloud calendars directly, and CalDAV servers such as Nextcloud, Radicale, Baïkal and Stalwart.
+- Syncs iCloud calendars directly, and CalDAV servers such as Nextcloud, Radicale, Baïkal, and Stalwart.
 - Shows and edits the phone's own calendars alongside the rest.
 - Subscribes to ICS calendars: holidays, school schedules, sports seasons.
 - Two-way CardDAV contact sync, including photos.
@@ -31,14 +31,14 @@ All your calendars in one private app on Android.
 - Works fully offline without any account.
 - Encrypted credentials, HTTPS by default, no WebViews.
 Website: https://kashcal.onekash.org
-Get it: Google Play, F-Droid, IzzyOnDroid or GitHub Releases (https://github.com/KashCal/KashCal/releases).
+Get it: Google Play, F-Droid, IzzyOnDroid, or GitHub Releases (https://github.com/KashCal/KashCal/releases).
 
 ### KashPass
 An Android companion for KeePass vaults, with no internet permission.
-- Opens KDBX 4.0 and 4.1 vaults with a password, a key file or both (AES-256 or ChaCha20; AES-KDF, Argon2d or Argon2id).
+- Opens KDBX 4.0 and 4.1 vaults with a password, a key file, or both (AES-256 or ChaCha20; AES-KDF, Argon2d, or Argon2id).
 - Opens the vault file from any storage app through Android's file picker, and saves back to the same file.
-- Search across titles, user names, URLs, notes, tags and custom fields; passwords are never searched.
-- Adds, edits and deletes entries the way KeePass 2 does, with entry history and the recycle bin.
+- Search across titles, user names, URLs, notes, tags, and custom fields; passwords are never searched.
+- Adds, edits, and deletes entries the way KeePass 2 does, with entry history and the recycle bin.
 - Fingerprint or face unlock; locks when the screen turns off.
 - Checks the file before each save and reads it back after, so a failed save keeps your edits.
 Website: https://kashpass.onekash.org
@@ -48,8 +48,8 @@ Get it: https://github.com/OneKashLabs/KashPass/releases
 Never forget a Cake Day. Birthday and anniversary reminders from your contacts on Android, with no internet access.
 - Reads birthdays and anniversaries from your contacts and keeps them current, even while closed.
 - Reminders on the day, or any day up to 30 before, at any time.
-- Ages and milestones, wishes by message, email or share, search, and a home-screen widget.
-- Read only: never changes your contacts. No account, ads or analytics.
+- Ages and milestones; wishes by message, email, or share; search; and a home-screen widget.
+- Read only: never changes your contacts. No account, ads, or analytics.
 Website: https://kashcake.onekash.org
 Get it: the Google Play beta (https://kashcake.onekash.org/beta/) or GitHub Releases (https://github.com/OneKashLabs/KashCake/releases).
 
@@ -58,7 +58,7 @@ An MCP (Model Context Protocol) server that gives AI agents read and write acces
 - Runs anywhere a JVM runs; no Mac needed.
 - Durable event handles across sessions, correct handling of recurring events, bounded responses.
 - Security aligned with the OWASP MCP Top 10. Uses an app-specific password, never the main account password.
-- Published on the MCP Registry, npm and PyPI.
+- Published on the MCP Registry, npm, and PyPI.
 Source: https://github.com/icloud-calendar-mcp/icloud-calendar-mcp
 
 ## Support

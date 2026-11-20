@@ -73,7 +73,7 @@ export default function Home(): ReactNode {
   return (
     <Layout
       title="Private, open-source apps"
-      description="OneKash Labs makes KashCal, KashPass and KashCake: private, open-source Android apps. We also help you learn to build, customize and run yours."
+      description="OneKash Labs makes KashCal, KashPass, and KashCake: private, open-source Android apps. We also help you learn to build, customize, and run yours."
       noFooter
       wrapperClassName="okh">
       <Head>
@@ -90,7 +90,7 @@ export default function Home(): ReactNode {
         <section className="hero">
           <div>
             <h1>What should we build together?</h1>
-            <p>We make private, open-source apps, and help you learn, customize and run yours.</p>
+            <p>We make private, open-source apps, and help you learn, customize, and run yours.</p>
             <a className="btn" href="#talk">Start a project</a>
           </div>
           <Phone />

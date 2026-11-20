@@ -82,19 +82,21 @@ export default function Home(): ReactNode {
         <title>OneKash Labs: private, open-source apps</title>
         <meta property="og:title" content="OneKash Labs: private, open-source apps" />
       </Head>
-      <div className="wrap">
-        <header className="top">
-          <a className="name" href="/"><img src={img('logo.svg')} alt="" width={36} height={36} />OneKash Labs</a>
-          <a className="mail" href={mail()}>Contact us</a>
-        </header>
-        <section className="hero">
-          <div>
-            <h1>What should we build together?</h1>
-            <p>We make private, open-source apps, and help you learn, customize, and run yours.</p>
-            <a className="btn" href="#talk">Start a project</a>
-          </div>
-          <Phone />
-        </section>
+      <div className="top-sky">
+        <div className="wrap">
+          <header className="top">
+            <a className="name" href="/"><img src={img('logo.svg')} alt="" width={36} height={36} />OneKash Labs</a>
+            <a className="mail" href={mail()}>Contact us</a>
+          </header>
+          <section className="hero">
+            <div>
+              <h1>What should we build together?</h1>
+              <p>We make private, open-source apps, and help you learn, customize, and run yours.</p>
+              <a className="btn" href="#talk">Start a project</a>
+            </div>
+            <Phone />
+          </section>
+        </div>
       </div>
 
       <div className="wrap">

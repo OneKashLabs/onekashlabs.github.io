@@ -50,7 +50,8 @@ Never forget a Cake Day. Birthday and anniversary reminders from your contacts o
 - Reminders on the day, or any day up to 30 before, at any time.
 - Ages and milestones, wishes by message, email or share, search, and a home-screen widget.
 - Read only: never changes your contacts. No account, ads or analytics.
-Get it: https://github.com/OneKashLabs/KashCake/releases
+Website: https://kashcake.onekash.org
+Get it: the Google Play beta (https://kashcake.onekash.org/beta/) or GitHub Releases (https://github.com/OneKashLabs/KashCake/releases).
 
 ### iCloud Calendar MCP
 An MCP (Model Context Protocol) server that gives AI agents read and write access to iCloud Calendar over CalDAV.

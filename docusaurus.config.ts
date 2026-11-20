@@ -84,7 +84,7 @@ const config: Config = {
             item: {
               '@type': 'SoftwareApplication',
               name: 'KashCake',
-              url: 'https://github.com/OneKashLabs/KashCake',
+              url: 'https://kashcake.onekash.org',
               operatingSystem: 'Android',
               applicationCategory: 'LifestyleApplication',
               description: 'Birthday and anniversary reminders from your contacts. No internet access.',
@@ -150,7 +150,7 @@ const config: Config = {
           items: [
             {label: 'KashCal', href: 'https://kashcal.onekash.org'},
             {label: 'KashPass', href: 'https://kashpass.onekash.org'},
-            {label: 'KashCake', href: 'https://github.com/OneKashLabs/KashCake'},
+            {label: 'KashCake', href: 'https://kashcake.onekash.org'},
             {label: 'GitHub', href: 'https://github.com/OneKashLabs'},
             {label: 'Donate', href: 'https://github.com/sponsors/one-kash'},
             {label: 'Contact', to: '/#talk'},

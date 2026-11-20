@@ -8,7 +8,7 @@ import '../css/home.css';
 
 const KASHCAL = 'https://kashcal.onekash.org';
 const KASHPASS = 'https://kashpass.onekash.org';
-const KASHCAKE = 'https://github.com/OneKashLabs/KashCake';
+const KASHCAKE = 'https://kashcake.onekash.org';
 const MCP = 'https://github.com/icloud-calendar-mcp/icloud-calendar-mcp';
 
 /**

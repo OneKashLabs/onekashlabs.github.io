@@ -11,6 +11,7 @@ const KASHCAL = 'https://kashcal.onekash.org';
 const KASHPASS = 'https://kashpass.onekash.org';
 const KASHCAKE = 'https://kashcake.onekash.org';
 const MCP = 'https://mcp.onekash.org';
+const DEVLOOP = 'https://devloop.onekash.org';
 
 /**
  * Returns the mailto link for an optional subject, built only after load so the address never
@@ -44,8 +45,8 @@ function Phone(): ReactNode {
               <a className="slot" href={KASHPASS}><img src={img('kashpass.webp')} alt="" width={72} height={72} /><span>KashPass</span></a>
               <a className="slot" href={KASHCAKE}><img src={img('kashcake.webp')} alt="" width={72} height={72} /><span>KashCake</span></a>
               <a className="slot" href={MCP}><img src={img('mcp.webp')} alt="" width={72} height={72} /><span>iCloud Calendar MCP</span></a>
+              <a className="slot" href={DEVLOOP}><img src={img('devloop.webp')} alt="" width={72} height={72} /><span>devloop</span></a>
               <a className="slot mine" href="#talk"><div className="yours" aria-hidden="true">+</div><span>Yours?</span></a>
-              <div className="slot ghost" aria-hidden="true" />
             </div>
             <img className="wallkash" src={img('kash-wave.webp')} alt="" />
             <div className="dots" aria-hidden="true"><i /><i /></div>
@@ -149,6 +150,10 @@ export default function Home(): ReactNode {
           <p className="tool">
             <img src={img('mcp.webp')} alt="" width={40} height={40} loading="lazy" decoding="async" />
             <span><a href={MCP}><strong>iCloud Calendar MCP</strong></a>: calendar access for AI agents.</span>
+          </p>
+          <p className="tool">
+            <img src={img('devloop.webp')} alt="" width={40} height={40} loading="lazy" decoding="async" />
+            <span><a href={DEVLOOP}><strong>devloop</strong></a>: a test-driven loop for coding agents, with independent review.</span>
           </p>
         </div>
       </section>

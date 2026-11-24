@@ -10,6 +10,7 @@ Full text for AI assistants: https://onekash.org/llms-full.txt
 - [KashPass](https://kashpass.onekash.org): open and edit your KeePass vault on Android. No internet permission.
 - [KashCake](https://kashcake.onekash.org): birthday and anniversary reminders from your contacts on Android. No internet access.
 - [iCloud Calendar MCP](https://mcp.onekash.org): an MCP server that gives AI agents read and write access to iCloud Calendar over CalDAV.
+- [devloop](https://devloop.onekash.org): a test-driven development loop for Claude Code and Codex: spec, plan and build, with independent agents reviewing the plan and the code.
 
 ## Each app's own files for AI assistants
 
@@ -17,6 +18,7 @@ Full text for AI assistants: https://onekash.org/llms-full.txt
 - KashPass: https://kashpass.onekash.org/llms.txt and https://kashpass.onekash.org/llms-full.txt
 - KashCake: https://kashcake.onekash.org/llms.txt and https://kashcake.onekash.org/llms-full.txt
 - iCloud Calendar MCP: https://mcp.onekash.org/llms.txt and https://mcp.onekash.org/llms-full.txt
+- devloop: https://devloop.onekash.org/llms.txt
 
 ## Work with us
 

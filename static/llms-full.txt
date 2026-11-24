@@ -62,9 +62,17 @@ An MCP (Model Context Protocol) server that gives AI agents read and write acces
 Website: https://mcp.onekash.org
 Source: https://github.com/icloud-calendar-mcp/icloud-calendar-mcp
 
+### devloop
+A test-driven development loop for Claude Code and Codex, shipped as a plugin of markdown skills and agents.
+- /spec clarifies what to build, /plan decides how, /implement builds it test first.
+- Independent agents review the plan and the code in a context that did not write them; you approve at two checkpoints.
+- Free and open source, Apache-2.0, no runtime dependencies.
+Website: https://devloop.onekash.org
+Source: https://github.com/OneKashLabs/devloop
+
 ## More detail on each app
 
-Each app's site has its own llms.txt and llms-full.txt: https://kashcal.onekash.org, https://kashpass.onekash.org, https://kashcake.onekash.org, and https://mcp.onekash.org (add /llms.txt or /llms-full.txt).
+Each app's site has its own llms.txt and llms-full.txt: https://kashcal.onekash.org, https://kashpass.onekash.org, https://kashcake.onekash.org, and https://mcp.onekash.org (add /llms.txt or /llms-full.txt). devloop has https://devloop.onekash.org/llms.txt.
 
 ## Support
 Support our work: https://github.com/sponsors/one-kash

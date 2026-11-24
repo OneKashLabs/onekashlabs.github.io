@@ -104,6 +104,18 @@ const config: Config = {
               author: {'@id': 'https://onekash.org/#org'},
             },
           },
+          {
+            '@type': 'ListItem',
+            position: 5,
+            item: {
+              '@type': 'SoftwareSourceCode',
+              name: 'devloop',
+              url: 'https://devloop.onekash.org',
+              codeRepository: 'https://github.com/OneKashLabs/devloop',
+              description: 'A test-driven development loop for Claude Code and Codex, with independent review of the plan and the code.',
+              author: {'@id': 'https://onekash.org/#org'},
+            },
+          },
         ],
       }),
     },
